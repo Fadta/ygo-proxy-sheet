@@ -4,7 +4,7 @@
 
 all: proxies.pdf
 
-proxies.pdf: download-images tex/cards.tex tex/proxies.tex
+proxies.pdf: tex/cards.tex tex/proxies.tex
 	echo 'Generating pdf'
 	(cd tex; pdflatex proxies.tex) > /dev/null
 	mv tex/proxies.pdf .
@@ -12,9 +12,11 @@ proxies.pdf: download-images tex/cards.tex tex/proxies.tex
 
 .PHONY: download-images
 
-download-images: decklist.txt scripts/download_images.sh scripts/read_decklist.sh
-	echo 'Downloading images'
-	./scripts/download_images.sh
+
+## manually fed images or search from a known source
+#download-images: decklist.txt scripts/download_images.sh scripts/read_decklist.sh
+#	echo 'Downloading images'
+#	./scripts/download_images.sh
 
 tex/cards.tex: decklist.txt scripts/generate_cards_tex.sh scripts/read_decklist.sh
 	./scripts/generate_cards_tex.sh
