@@ -24,9 +24,9 @@ function generate_tex() {
         # LaTeX code that inserts a card (% removes horizontal space between cards)
         echo "\card{${card}}%"
 
-        # print a LaTeX line break after every third card
+        # print a LaTeX line break after every fifth card
         line_count="${line_count}I"
-        if [ ${line_count} = 'III' ]; then
+        if [ ${line_count} = 'IIIII' ]; then
             line_count=''
             echo '\\[-0.34mm]'
         fi
@@ -35,4 +35,4 @@ function generate_tex() {
 }
 
 
-read_decklist | generate_tex > "${out_path}"
+read_sources | generate_tex > "${out_path}"

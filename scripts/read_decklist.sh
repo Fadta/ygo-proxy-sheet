@@ -4,6 +4,7 @@
 
 
 readonly deck_list_path='../decklist.txt'
+readonly deck_sources_path='../images/'
 
 
 # reads the decklist at ${deck_list_path} and pre-processes it
@@ -39,4 +40,10 @@ function read_decklist() {
         echo "${card}"
 
     done < "${deck_list_path}"
+}
+
+function read_sources(){
+    ls ${deck_sources_path} | sed -e 's/\.png$//' | while read card; do
+        echo "${card}"
+    done
 }
