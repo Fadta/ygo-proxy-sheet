@@ -10,8 +10,6 @@ proxies.pdf: tex/cards.tex tex/proxies.tex
 	mv tex/proxies.pdf .
 	echo 'done'
 
-.PHONY: download-images
-
 
 ## manually fed images or search from a known source
 #download-images: decklist.txt scripts/download_images.sh scripts/read_decklist.sh
