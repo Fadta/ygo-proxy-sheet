@@ -1,3 +1,6 @@
+Edited by Fadta, place the .png in ./images and run make.
+Subsequent runs need a previous make clean.
+
 # Yu-Gi-Oh! Proxy Generator
 
 
